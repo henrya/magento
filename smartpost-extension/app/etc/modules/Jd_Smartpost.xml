@@ -1,0 +1,8 @@
+<config>
+      <modules>
+        <Jd_Smartpost>
+          <active>true</active>
+          <codePool>local</codePool>
+        </Jd_Smartpost>
+      </modules>
+</config>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+    <config>
+       <modules>
+        <Jd_Smartpost>
+          <version>0.1.0</version>
+        </Jd_Smartpost>
+      </modules>          
+          <admin>
+                 <routers>
+                     <adminhtml>
+                         <args>
+                             <modules>
+                                 <smartpost before="Mage_Adminhtml">Jd_Smartpost_Adminhtml</smartpost>
+                             </modules>
+                         </args>
+                     </adminhtml>
+                 </routers>
+             </admin>
+      <global>
+        <models>
+          <smartpost>
+            <class>Jd_Smartpost_Model</class>
+          </smartpost>
+        </models>
+        <resources>
+          <smartpost_setup>
+            <setup>
+              <module>Jd_Smartpost</module>
+            </setup>
+            <connection>
+              <use>core_setup</use>
+            </connection>
+          </smartpost_setup>
+        </resources>
+        <blocks>
+             <adminhtml>
+                <rewrite>
+                    <sales_order_view>Jd_Smartpost_Block_Adminhtml_Sales_Order_View</sales_order_view>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <rewrite>
+        		<Jd_Smartpost_Export>
+        			<from><![CDATA[#^/admin/sales_order/smartpost#]]></from>
+        			<to>/admin/smartpost/export</to>
+        		</Jd_Smartpost_Export>
+        </rewrite>
+      </global>
+      <default>
+              <carriers>
+                  <smartpost>
+                          <active>1</active>
+                          <sallowspecific>0</sallowspecific>
+                          <model>smartpost/carrier_smartpost</model>
+                          <name>Smartpost</name>
+                          <title>Smartpost</title>
+                          <specificerrmsg>
+                              This shipping method is currently unavailable.
+                              If you would like to ship using this shipping
+                              method, please contact us.
+                          </specificerrmsg>
+                          <handling_type>O</handling_type>
+                  </smartpost>
+              </carriers>
+      </default>
+    </config>
+    
+    

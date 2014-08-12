@@ -1,0 +1,49 @@
+<?php
+
+/**
+* SmartPost form.phtml template
+*
+* @version 1.0
+* @copyright 2014 Henry Algus. All rights reserved.
+*
+*/
+
+$_code=$this->getMethodCode();
+$carrier = $this->getMethodInstance();
+
+$_rates = $this->getRates();
+
+// dirty hack to sort rates alphabetically, because rates are sorted by price by default
+$rateData = array();
+foreach($_rates as $_item) {
+	$rateData[$_item->getCode()] = $_item;
+}
+ksort($rateData);
+?>
+
+<div class="select-form-block">
+    <div class="form-shipping-name">
+        <input id="s_method_<?php echo $_code;?>" class="radio validate-one-required-by-name" onclick="changeShippingForm('<?php echo $_code;?>');" type="radio" value="" name="shipping_method">
+        <label for="s_method_<?php echo $_code;?>"><?php echo $this->getMethodTitle();?></label>
+    </div>
+    <div class="form-shipping-data">    
+        <ul class="form-list">
+            <li>
+                <span class="input-box">
+                    <select id="shipping_method_select_<?php echo $_code;?>" style="display:none" onchange="changeRadioValue('<?php echo $_code;?>');" name="shipping_method_select" disabled>
+                        <option value=""><?php echo $this->__('Select place'); ?></option>
+                        <?php foreach($rateData as $_rate):?>
+                        <option value="<?php echo $_rate->getCode() ?>"><?php echo $_rate->getMethodTitle() ?>
+                        <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
+                            <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
+                            (<?php echo strip_tags($_excl); ?>)
+                            <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                                (<?php echo $this->__('Incl. Tax'); ?> <?php echo strip_tags($_incl); ?>)
+                            <?php endif; ?></option>
+                        <?php endforeach;?>
+                    </select>
+                </span>
+             </li>
+        </ul>
+    </div>
+</div>
