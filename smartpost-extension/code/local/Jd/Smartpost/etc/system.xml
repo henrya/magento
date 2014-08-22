@@ -44,6 +44,14 @@
                                       <show_in_website>1</show_in_website>
                                       <show_in_store>1</show_in_store>
                              </price>  
+                             <price_free translate="label">
+                                           <label>Free shipping when order cost is more than</label>
+                                           <frontend_type>text</frontend_type>
+                                           <sort_order>5</sort_order>
+                                           <show_in_default>1</show_in_default>
+                                           <show_in_website>1</show_in_website>
+                                           <show_in_store>1</show_in_store>
+                             </price_free>
                               <service_uri translate="label">
                                    <label>Service url</label>
                                    <frontend_type>text</frontend_type>
