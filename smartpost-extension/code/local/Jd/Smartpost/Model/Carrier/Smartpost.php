@@ -70,9 +70,9 @@ class Jd_Smartpost_Model_Carrier_Smartpost extends Mage_Shipping_Model_Carrier_A
 					$method->setMethodTitle ( $box );
 					
 					// allow free shipping when order total is more than configured total price
-	                if ($totalPrice > $this->getConfigData('price_free')) {
-	                   $shippingPrice = '0.00';
-	                }
+					if ($totalPrice > $this->getConfigData('price_free')) {
+						$shippingPrice = '0.00';
+					}
 					
 					$method->setPrice ( $shippingPrice );
 					$method->setCost ( $shippingPrice );
