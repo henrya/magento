@@ -3,7 +3,7 @@
 * Jd_Smartpost_Adminhtml_SmartpostController
 *
 * @version 1.0
-* @copyright 2014 Henry Algus. All rights reserved.
+* @author Henry Algus <henryalgus@gmail.com>
 *
 */
 class Jd_Smartpost_Adminhtml_SmartpostController extends Mage_Adminhtml_Controller_Action {

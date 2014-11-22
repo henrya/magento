@@ -4,7 +4,7 @@
 * Jd_Smartpost_Model_Carrier_Smartpost
 *
 * @version 1.0
-* @copyright 2014 Henry A,gus. All rights reserved.
+* @author Henry Algus <henryalgus@gmail.com>
 *
 */
 class Jd_Smartpost_Model_Carrier_Smartpost extends Mage_Shipping_Model_Carrier_Abstract implements Mage_Shipping_Model_Carrier_Interface {

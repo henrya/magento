@@ -3,7 +3,7 @@
 * Jd_Smartpost_Block_Adminhtml_Sales_Order_View
 *
 * @version 1.0
-* @copyright 2014 Henry Algus. All rights reserved.
+* @author Henry Algus <henryalgus@gmail.com>
 *
 */
 class Jd_Smartpost_Block_Adminhtml_Sales_Order_View extends Mage_Adminhtml_Block_Sales_Order_View {
